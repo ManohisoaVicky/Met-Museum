@@ -1,8 +1,13 @@
 import React from 'react'
 
+import ResultCard from '../components copy/ResultCard'
+
 function Favorites() {
   return (
-    <div>Favorites</div>
+    <div>
+      <h1>Favorites</h1>
+      <ResultCard />
+    </div>
   )
 }
 

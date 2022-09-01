@@ -8,7 +8,52 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Library from "./pages/Library";
 
+import { useState, useEffect } from "react";
+
 function App() {
+  const [artwork, setArtwork] = useState(null);
+
+  useEffect(() => {
+    // 10 favourite objects ...
+    // fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects")
+    //   .then((response) => {
+    //     if (!response.ok) {
+    //       throw new Error(response.status);
+    //     }
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+    fetch(
+      "https://collectionapi.metmuseum.org/public/collection/v1/search?q=sculpture"
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(response.status);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const itemsWanted = data.objectIDs.slice(0, 10); // There may be none!
+        Promise.all(
+          itemsWanted.map(async (id) => {
+            const resp = await fetch(
+              `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
+            );
+
+            const item = await resp.json();
+            return item;
+          })
+        ).then((data) => console.log(data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <div className="App">
       <Header />

@@ -6,17 +6,17 @@ import DetailedView from "./pages/DetailedView";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
-import Library from "./Library";
+import Library from "./pages/Library";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="" element={<Home />} />
-        <Route path="" element={<About />} />
-        <Route path="" element={<Library />} />
-        <Route path="" element={<Favorites />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/library" element={<Library />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="" element={<DetailedView />} />
       </Routes>
       <Footer />

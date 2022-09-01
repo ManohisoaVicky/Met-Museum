@@ -1,9 +1,17 @@
-import React from 'react'
+.Header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
 
-function Header() {
-  return (
-    <div>Header</div>
-  )
+  padding: 10px 5vw;
+  background: silver;
+  color: aliceblue;
 }
 
-export default Header
+nav > a {
+  text-decoration: none;
+  color: inherit;
+  padding: 5px;
+  margin: 0 10px;
+}

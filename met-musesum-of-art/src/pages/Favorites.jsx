@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ResultCard from '../components copy/ResultCard'
+import ResultCard from '../components/ResultCard'
 
 function Favorites() {
   return (

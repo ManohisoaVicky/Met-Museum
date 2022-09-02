@@ -28,6 +28,8 @@ function App() {
     //   .catch((error) => {
     //     console.log(error);
     //   });
+
+    // Debouncing/Throttling
     fetch(
       "https://collectionapi.metmuseum.org/public/collection/v1/search?q=sculpture"
     )

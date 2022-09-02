@@ -2,17 +2,57 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: stretch;
 
-  padding: 10px 5vw;
-  background: silver;
+  padding: 0 1rem;
+  margin: 0;
+  background-color: silver;
   color: aliceblue;
   height: 10vh;
 }
 
-nav > a {
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.nav-link, 
+.logo-link {
   text-decoration: none;
   color: inherit;
-  padding: 5px;
-  margin: 0 10px;
 }
+
+.Header a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  padding: .25rem;
+}
+
+nav li {
+  width: 5vw;
+}
+
+.nav-link {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li.active{
+  background-color: #d3d3d3;
+} 
+
+nav li:hover {
+  background-color: #dcdcdc;
+}
+
+

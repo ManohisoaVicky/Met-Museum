@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Library from "./pages/Library";
 
+import data from "../data.js";
+
 import { useState, useEffect } from "react";
 
 function App() {

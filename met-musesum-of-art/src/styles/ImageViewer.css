@@ -9,16 +9,24 @@
 }
 
 .ImageViewer-main-image-container {
-    background: whitesmoke;
+    background: silver;
     height: 300px;
     width: 400px;
+    overflow: hidden;
 }
 
 .ImageViewer-main-image-container > img {
+    /* height: 100%;
+    width: 100%; */
+    /* object-fit: cover; */
+    transition: 0.5s
+}
+
+/* .ImageViewer-main-image-container > img:hover {
     height: 100%;
     width: 100%;
     object-fit: cover;
-}
+} */
 
 .ImageViewer-additional-image-container {
     display: flex;
@@ -34,7 +42,11 @@
     height: 90px;
     width: 120px;
     margin: 5px;
-        object-fit: cover;
+    object-fit: cover;
+}
+
+.selected {
+    border: 2px solid rgb(88, 188, 222);
 }
 
 

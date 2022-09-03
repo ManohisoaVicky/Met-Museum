@@ -1,0 +1,47 @@
+.Review {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+
+    border: 3px solid grey;
+    background: whitesmoke;
+
+    margin-top: 5px
+}
+
+.Review-user {
+    text-align: center;
+    font-family: 'Playfair';
+    font-weight: 600;
+    color: grey;
+}
+
+.Review-user-icon {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    background: silver;
+    border: 3px solid grey;
+    border-radius: 50vmax;
+}
+
+.Review-content {
+    margin-left: 10px;
+}
+
+.Review-comment {
+    padding-left: 10px;
+    font-family: 'Playfair';
+    font-weight: 300;
+    color: grey;
+}
+
+.Review-comment-quotemark {
+        font-family: 'Playfair';
+            font-weight: 800;
+    color: silver;
+    font-size: large;
+}
+

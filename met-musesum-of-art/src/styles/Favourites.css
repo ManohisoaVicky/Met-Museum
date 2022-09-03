@@ -1,0 +1,13 @@
+.favorite-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5%;
+    row-gap: 5%;
+    place-items: center;
+    margin-top: 3rem;
+}
+
+h1 {
+    text-align: center;
+}

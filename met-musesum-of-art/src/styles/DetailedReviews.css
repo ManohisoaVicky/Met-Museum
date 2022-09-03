@@ -1,9 +1,9 @@
-import React from 'react'
+.DetailedReviews {
 
-function DetailedReviews() {
-  return (
-    <div>DetailedReviews</div>
-  )
 }
 
-export default DetailedReviews
+.star-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 5px;
+}

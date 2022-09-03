@@ -7,13 +7,14 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Library from "./pages/Library";
-
-import data from "../data.js";
+import data from "./data.js";
 
 import { useState, useEffect } from "react";
 
 function App() {
   const [artwork, setArtwork] = useState(null);
+  const [staticData, setStaticData] = useState(data);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     // 10 favourite objects ...
@@ -64,8 +65,26 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/library" element={<Library />} />
-        <Route path="/favorites" element={<Favorites />} />
+        <Route
+          path="/library"
+          element={
+            <Library
+              staticData={staticData}
+              favorites={favorites}
+              setFavorites={setFavorites}
+            />
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <Favorites
+              staticData={staticData}
+              favorites={favorites}
+              setFavorites={setFavorites}
+            />
+          }
+        />
         <Route path="/detailed" element={<DetailedView />} />
       </Routes>
       <Footer />

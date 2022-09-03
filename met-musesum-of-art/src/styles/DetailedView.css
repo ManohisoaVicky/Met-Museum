@@ -1,3 +1,19 @@
 .DetailedView {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: space-between;
     margin: 5vh 5vw;
+}
+
+.DetailedView .top {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.DetailedInfo {
+    text-align: left;
+    margin-left: 35px;
 }

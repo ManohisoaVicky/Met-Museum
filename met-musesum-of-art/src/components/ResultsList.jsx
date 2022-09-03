@@ -2,15 +2,13 @@ import React from 'react'
 
 import "../styles/ResultsList.css"
 import ResultCard from './ResultCard'
-import data from '../data.js'
+// import data from '../data.js'
 
-function ResultsList() {
-
-  console.log(data)
+function ResultsList(props) {
 
   return (
     <section className="results-section">
-      <ResultCard data={data}/>
+      <ResultCard staticData={props.staticData} favorites={props.favorites} setFavorites={props.setFavorites}/>
     </section>
   )
 }

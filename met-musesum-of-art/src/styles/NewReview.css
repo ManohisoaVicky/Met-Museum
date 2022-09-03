@@ -1,0 +1,72 @@
+.NewReview {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+
+    border: 1px solid silver;
+    background: lightgray;
+}
+
+.NewReview-user {
+    text-align: center;
+    font-family: 'Playfair';
+    font-weight: 600;
+    color: grey;
+}
+
+.NewReview-user-icon {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    background: whitesmoke;
+    border: 1px solid silver;
+    border-radius: 50vmax;
+}
+
+.NewReview-content {
+    margin-left: 10px;
+    width: 100%;
+}
+
+.NewReview-comment textarea {
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.star {
+    color: grey;
+}
+
+.star:hover {
+    color: midnightblue;
+    opacity: 0.7;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+            
+}
+
+.fill {
+    color: midnightblue;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+

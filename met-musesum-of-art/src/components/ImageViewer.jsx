@@ -18,18 +18,16 @@ function ImageViewer() {
     setPrimaryImage(e.target.src)
   }
   
-  function handleImageDrag (e) {
-    console.log(e)
-    if (e.target) {
-      console.log(e)
-      setImageMargin({x: -e.target.offsetLeft, y: -e.target.offsetTop})
-    }
-  }
+  // function handleImageDrag (e) {
+  //   console.log(e)
+  //     setImageMargin({x: 200-(e.target.offsetLeft/400)*e.target.naturalWidth, y: -(e.target.offsetTop/300)*e.target.naturalHeight})
+  // }
 
   return (
     <div className="ImageViewer">
       <div className="ImageViewer-main-image-container">
-        <img onMouseMove={handleImageDrag} onMouseOut={() => {setImageMargin({x: 0, y: 0})}} src={primaryImage} alt="" style={{marginLeft: imageMargin.x, marginTop: imageMargin.y }}/>
+      {/* <div onMouseOver={handleImageDrag} onMouseOut={() => {setImageMargin({x: 0, y: 0})}} className="ImageViewer-main-image-container"> */}
+        <img  src={primaryImage} alt="" style={{marginLeft: imageMargin.x, marginTop: imageMargin.y }}/>
         </div>
       <div className="ImageViewer-additional-image-container">
         {additionalImages.map((url) => {

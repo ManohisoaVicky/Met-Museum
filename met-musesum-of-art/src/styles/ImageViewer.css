@@ -1,0 +1,41 @@
+.ImageViewer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background: silver;
+    height: 406px;
+    width: 404px;
+}
+
+.ImageViewer-main-image-container {
+    background: whitesmoke;
+    height: 300px;
+    width: 400px;
+}
+
+.ImageViewer-main-image-container > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.ImageViewer-additional-image-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+    height: 100px;
+    width: 400px;
+}
+
+.ImageViewer-additional-image-container > img {
+    height: 90px;
+    width: 120px;
+    margin: 5px;
+        object-fit: cover;
+}
+
+
+

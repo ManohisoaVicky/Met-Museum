@@ -1,0 +1,9 @@
+.result-card {
+    border: 1px solid red;
+    height: 50vh;
+    width: 25vw;
+}
+
+.result-img {
+    height: 200px;
+}

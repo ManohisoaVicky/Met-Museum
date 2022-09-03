@@ -1,14 +1,15 @@
 import React from 'react'
 
-import SearchBar from '../components/SearchBar'
+import Search from '../components/Search'
 import ResultsList from '../components/ResultsList'
+import "../styles/Library.css"
 
 function Library() {
 
   return (
-    <div>
+    <div className="Library">
       <h1>Library</h1>
-      <SearchBar />
+      <Search />
       <ResultsList />
     </div>
   )

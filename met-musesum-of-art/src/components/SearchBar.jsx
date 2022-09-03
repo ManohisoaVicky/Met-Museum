@@ -1,8 +1,10 @@
 import React from 'react'
+import "../styles/SearchBar.css"
 
 function SearchBar() {
+
   return (
-    <div>SearchBar</div>
+    <input className='SearchBar' type="text" placeholder='Search'/>
   )
 }
 

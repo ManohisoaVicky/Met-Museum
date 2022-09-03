@@ -1,0 +1,77 @@
+.FilterBurger {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.FilterBurger div {
+    border-radius: 50vmax;
+    height: 2px;
+    background: black;
+}
+
+.FilterBurger .bar-1 {
+    width: 40px;
+    transform: translate(0, 2px);
+}
+
+.FilterBurger .bar-2 {
+    width: 1px;
+    opacity: 0;
+}
+
+.FilterBurger .bar-3 {
+    width: 20px;
+    transform: translate(0, -2px);
+}
+
+.FilterBurger.close .bar-1 {
+    transform: translate(0, -10px);
+    transition: 0.75s;
+}
+
+.FilterBurger.close .bar-2 {
+    width: 30px;
+    opacity: 1;
+    transition: 0.75s;
+}
+
+.FilterBurger.close .bar-3 {
+    transform: translate(0, 10px);
+    transition: 0.75s;
+}
+
+.FilterBurger.open {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.FilterBurger.open .bar-1 {
+    width: 40px;
+    transform: translate(0px, 2px) rotate(45deg);
+    background: black;
+    transition: 0.75s;
+}
+
+.FilterBurger.open .bar-2 {
+    width: 40px;
+    transform: scale(0, 1);
+    opacity: 0;
+    transition: 0.75s
+}
+
+.FilterBurger.open .bar-3 {
+    width: 40px;
+    transform: translate(0px, -2px) rotate(-45deg);
+    transition: 0.75s;
+}

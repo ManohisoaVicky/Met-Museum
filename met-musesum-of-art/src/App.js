@@ -31,7 +31,7 @@ function App() {
 
     // Debouncing/Throttling
     fetch(
-      "https://collectionapi.metmuseum.org/public/collection/v1/search?q=sculpture"
+      "https://collectionapi.metmuseum.org/public/collection/v1/search?q=sculpture&hasImages=true"
     )
       .then((response) => {
         if (!response.ok) {
@@ -64,7 +64,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/library" element={<Library />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="" element={<DetailedView />} />
+        <Route path="/detailed" element={<DetailedView />} />
       </Routes>
       <Footer />
     </div>

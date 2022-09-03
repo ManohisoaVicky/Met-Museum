@@ -1,8 +1,17 @@
 import React from 'react'
 
+import "../styles/ResultsList.css"
+import ResultCard from './ResultCard'
+import data from '../data.js'
+
 function ResultsList() {
+
+  console.log(data)
+
   return (
-    <div>ResultsList</div>
+    <section className="results-section">
+      <ResultCard data={data}/>
+    </section>
   )
 }
 

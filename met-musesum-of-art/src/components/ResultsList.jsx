@@ -8,7 +8,8 @@ function ResultsList(props) {
 
   function addFavorite(art) {
     const favoriteList = [...props.favorites, art]
-    props.setFavorites(favoriteList)
+    const noDuplicateList = [...new Set(favoriteList)]
+    props.setFavorites(noDuplicateList)
   }
 
   return (

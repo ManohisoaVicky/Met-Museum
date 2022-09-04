@@ -3,36 +3,18 @@ import React, {useState} from 'react'
 import "../styles/ResultCard.css"
 
 function ResultCard(props) {
- 
-  // const [favorite, setFavorite] = useState(false)
-
-  // function favoriteHandler() {
-  //   setFavorite((prev) => !prev)
-  // }
-
-  function addFavorite(art) {
-    const favoriteList = [...props.favorites, art]
-    props.setFavorites(favoriteList)
-  }
-
-  // props.setFavorites(1)
 
   return (
     <>
-    {
-    props.staticData.map((artwork) => {
-      if (artwork.primaryImage !== "")
-      return (
-      <div className='result-card' key={artwork.objectID}>
-        <img src={artwork.primaryImage} alt={artwork.title} className="result-img"/>
-        <button className="fav" onClick={() => addFavorite(artwork)}>Add to Favorite</button>
+      <div className='result-card' key={props.artKey}>
+        <img src={props.src} alt={props.title} className="result-img"/>
+        <button className="fav" onClick={props.clickHandler}>Add to Favorite</button>
+        {/* <span class="material-symbols-outlined">favorite</span> */}
         <div className='card-description'>
-          <h4>{artwork.title}</h4>
-          <p>{(artwork.artistDisplayName === "") ? (`Artist name not found`) : (`Made by ${artwork.artistDisplayName}`)}</p>
+          <h4>{props.title}</h4>
+          <p>{(props.displayName === "") ? (`Artist name not found`) : (`Made by ${props.displayName}`)}</p>
         </div>
-      </div>)
-    }
-    )}
+      </div>
     </>
   )
 }

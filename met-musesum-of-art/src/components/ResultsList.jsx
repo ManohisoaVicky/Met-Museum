@@ -6,11 +6,28 @@ import ResultCard from './ResultCard'
 
 function ResultsList(props) {
 
+  function addFavorite(art) {
+    const favoriteList = [...props.favorites, art]
+    props.setFavorites(favoriteList)
+  }
+
   return (
     <section className="results-section">
-      <ResultCard staticData={props.staticData} favorites={props.favorites} setFavorites={props.setFavorites}/>
+      {
+        props.staticData.map((artwork) => {
+          if (artwork.primaryImage !== "")
+          return (
+            <ResultCard staticData={props.staticData} favorites={props.favorites} setFavorites={props.setFavorites}
+            artKey={artwork.objectID} src={artwork.primaryImage} title={artwork.title} displayName={artwork.artistDisplayName}
+            clickHandler={() => addFavorite(artwork)} key={artwork.objectID}
+            />
+          )
+        })
+      }
     </section>
   )
 }
+
+
 
 export default ResultsList

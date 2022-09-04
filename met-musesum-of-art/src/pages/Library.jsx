@@ -8,9 +8,7 @@ function Library(props) {
 
   return (
     <div className="Library">
-      <h1>Library
-        {/* <span class="material-symbols-outlined">favorite</span> */}
-      </h1>
+      <h1>Library</h1>
       <Search />
       <ResultsList staticData={props.staticData} favorites={props.favorites} setFavorites={props.setFavorites}/>
     </div>

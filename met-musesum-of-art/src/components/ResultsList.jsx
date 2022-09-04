@@ -19,7 +19,7 @@ function ResultsList(props) {
           return (
             <ResultCard staticData={props.staticData} favorites={props.favorites} setFavorites={props.setFavorites}
             artKey={artwork.objectID} src={artwork.primaryImage} title={artwork.title} displayName={artwork.artistDisplayName}
-            clickHandler={() => addFavorite(artwork)} key={artwork.objectID}
+            clickHandler={() => addFavorite(artwork)} key={artwork.objectID} icon={"favorite"}
             />
           )
         })

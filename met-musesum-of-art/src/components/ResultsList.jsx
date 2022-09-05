@@ -12,19 +12,21 @@ function ResultsList(props) {
     props.setFavorites(noDuplicateList)
   }
 
+  console.log("props.artwork", props.artwork)
+
   return (
     <section className="results-section">
-      {
-        props.staticData.map((artwork) => {
-          if (artwork.primaryImage !== "")
-          return (
-            <ResultCard staticData={props.staticData} favorites={props.favorites} setFavorites={props.setFavorites}
-            artKey={artwork.objectID} src={artwork.primaryImage} title={artwork.title} displayName={artwork.artistDisplayName}
-            clickHandler={() => addFavorite(artwork)} key={artwork.objectID} icon={"favorite"}
-            />
-          )
-        })
-      }
+      { props.artwork ?
+        props.artwork.map((art) => {
+          if (art.primaryImage !== "") {
+            return (
+              <ResultCard staticData={props.staticData} favorites={props.favorites} setFavorites={props.setFavorites} reviews={props.reviews} setReviews={props.setReviews} artKey={art.objectID} src={art.primaryImage} title={art.title} displayName={art.artistDisplayName}
+              clickHandler={() => addFavorite(art)} key={art.objectID} icon={"favorite"}
+              />
+            )
+          }
+        }) :
+      <>Failed</>}
     </section>
   )
 }

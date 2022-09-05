@@ -1,12 +1,12 @@
 import React, { useState }  from 'react'
 import "../styles/NewReview.css"
 
-function NewReview() {
+function NewReview(props) {
 
   const stars = [1, 2, 3, 4, 5];
   const [review, setReview] = useState({
     user: "",
-    rating: 0,
+    rating: 1,
     comment: ""
   })
   
@@ -21,7 +21,8 @@ function NewReview() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log("Need to pass down a setter... it will add this review", review)
+    props.setReviews((prevReviews) => prevReviews.push(review))
+    console.log("Need to pass down a setter... it will add this review", review, props.reviews)
   }
 
   return (

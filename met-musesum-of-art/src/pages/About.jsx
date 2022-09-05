@@ -7,7 +7,7 @@ function About() {
   return (
     <div>
         <h1>About</h1>
-        <ImageViewer />
+        {/* <ImageViewer /> */}
         <ContactInfo />
         <Map />    
     </div>

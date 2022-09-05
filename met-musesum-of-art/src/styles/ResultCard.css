@@ -4,6 +4,12 @@
     width: 20vw;
     border-radius: 10px;
     position: relative;
+    color: black;
+}
+
+.result-card a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .result-img {

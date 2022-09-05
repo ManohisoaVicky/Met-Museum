@@ -2,32 +2,20 @@ import React from 'react'
 import { useState } from 'react';
 import "../styles/ImageViewer.css"
 
-function ImageViewer() {
+function ImageViewer( { art } ) {
 
-  const [primaryImage, setPrimaryImage] = useState("https://images.metmuseum.org/CRDImages/aa/original/LC-1970_77-001.jpg")
-  const [additionalImages, setAdditionalImages] = useState(
-    [
-    "https://images.metmuseum.org/CRDImages/aa/original/LC-1970_77-001.jpg" ,
-    "https://images.metmuseum.org/CRDImages/dp/original/DP826241.jpg",
-    "https://images.metmuseum.org/CRDImages/es/original/DP250149.jpg"
-    ]
-  )
-  const [imageMargin, setImageMargin] = useState({x: 0, y: 0})
+  const [primaryImage, setPrimaryImage] = useState(art.primaryImage)
+  const [additionalImages, setAdditionalImages] = useState([art.primaryImage, ...art.additionalImages])
 
   function handleNewSelection (e) {
     setPrimaryImage(e.target.src)
   }
-  
-  // function handleImageDrag (e) {
-  //   console.log(e)
-  //     setImageMargin({x: 200-(e.target.offsetLeft/400)*e.target.naturalWidth, y: -(e.target.offsetTop/300)*e.target.naturalHeight})
-  // }
 
   return (
     <div className="ImageViewer">
       <div className="ImageViewer-main-image-container">
       {/* <div onMouseOver={handleImageDrag} onMouseOut={() => {setImageMargin({x: 0, y: 0})}} className="ImageViewer-main-image-container"> */}
-        <img  src={primaryImage} alt="" style={{marginLeft: imageMargin.x, marginTop: imageMargin.y }}/>
+        <img  src={primaryImage} alt=""/>
         </div>
       <div className="ImageViewer-additional-image-container">
         {additionalImages.map((url) => {

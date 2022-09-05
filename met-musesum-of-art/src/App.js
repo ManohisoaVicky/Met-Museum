@@ -15,6 +15,9 @@ function App() {
   const [artwork, setArtwork] = useState(null);
   const [staticData, setStaticData] = useState(data);
   const [favorites, setFavorites] = useState([]);
+  const [reviews, setReviews] = useState([]);
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     // 10 favourite objects ...
@@ -34,7 +37,7 @@ function App() {
 
     // Debouncing/Throttling
     fetch(
-      "https://collectionapi.metmuseum.org/public/collection/v1/search?q=sculpture&hasImages=true"
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}&medium=${filter}&hasImages=true`
     )
       .then((response) => {
         if (!response.ok) {
@@ -43,7 +46,7 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        const itemsWanted = data.objectIDs.slice(0, 10); // There may be none!
+        const itemsWanted = data.objectIDs.slice(0, 9); // There may be none!
         Promise.all(
           itemsWanted.map(async (id) => {
             const resp = await fetch(
@@ -53,12 +56,15 @@ function App() {
             const item = await resp.json();
             return item;
           })
-        ).then((data) => console.log(data));
+        ).then((data) => {
+          setArtwork(data);
+        });
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [search, filter]);
+
   return (
     <div className="App">
       <Header />
@@ -69,9 +75,15 @@ function App() {
           path="/library"
           element={
             <Library
-              staticData={staticData}
+              artwork={artwork}
               favorites={favorites}
               setFavorites={setFavorites}
+              search={search}
+              setSearch={setSearch}
+              filter={filter}
+              setFilter={setFilter}
+              reviews={reviews}
+              setReviews={setReviews}
             />
           }
         />
@@ -85,7 +97,16 @@ function App() {
             />
           }
         />
-        <Route path="/detailed" element={<DetailedView />} />
+        <Route
+          path="/detailed/:id"
+          element={
+            <DetailedView
+              reviews={reviews}
+              setReviews={setReviews}
+              art={artwork}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </div>

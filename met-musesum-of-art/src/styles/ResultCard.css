@@ -1,10 +1,16 @@
 .result-card {
-    border: 1px solid grey;
-    height: 55vh;
-    width: 20vw;
-    border-radius: 10px;
+    /* border: 1px solid grey; */
+    /* height: 55vh;
+    width: 20vw; */
+    min-height: 400px;
+    /* max-height: 400px; */
+    width: 250px;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 10px 3px lightgrey;
     position: relative;
     color: black;
+
+    margin: 10px;
 }
 
 .result-card a {
@@ -13,29 +19,33 @@
 }
 
 .result-img {
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
-    height: 80%;
-    width: 100%;
+    /* border-top-right-radius: 7px;
+    border-top-left-radius: 7px; */
+    height: 300px;
+    width: 250px;
+    object-fit: cover;
 }
 
 .card-description {
-    height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-top: 5px solid midnightblue;
+    margin-top: -3px;
+
 }
 
 .fav {
     position: absolute;
     top: 2%;
     right: 2%;
+    text-shadow: 0px 0px 10px white;
 }
 
 .grow { 
-    transition: all .2s ease-in-out; 
+    transition: all .3s ease-in-out; 
     }
     
     .grow:hover { 
@@ -45,6 +55,7 @@
 
 .material-symbols-outlined:hover {
     cursor: pointer;
+    color: red;
   font-variation-settings:
   'FILL' 1,
   'wght' 400,
@@ -56,5 +67,14 @@
 .card-description p, 
 .card-description h4 {
     padding: 0;
-    margin: 0;
+    margin: 5px;
+}
+
+.card-description h4 {
+    font-weight: 500;
+}
+
+.card-description p {
+    font-weight: 300;
+    color: charcoal;
 }

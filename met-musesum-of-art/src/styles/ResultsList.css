@@ -17,3 +17,8 @@
     align-items: flex-start;
     background-color: whitesmoke;
 }
+
+.load-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

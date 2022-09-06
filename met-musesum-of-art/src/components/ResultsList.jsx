@@ -12,9 +12,14 @@ function ResultsList(props) {
     props.setFavorites(noDuplicateList)
   }
 
+  function loadMore() {
+    props.setLoad((prev) => prev + 10)
+  }
+
   console.log("props.artwork", props.artwork)
 
   return (
+    <>
     <section className="results-section">
       { props.artwork ?
         props.artwork.map((art) => {
@@ -28,6 +33,8 @@ function ResultsList(props) {
         }) :
       <>Creating Artwork 🎨</>}
     </section>
+    <p className='load-button' onClick={loadMore} >Load More</p>
+    </>
   )
 }
 

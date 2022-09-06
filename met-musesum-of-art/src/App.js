@@ -18,6 +18,7 @@ function App() {
   const [reviews, setReviews] = useState([]);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState([]);
+  const [load, setLoad] = useState(21);
 
   useEffect(() => {
     // 10 favourite objects ...
@@ -48,7 +49,7 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        const itemsWanted = data.objectIDs.slice(0, 9); // There may be none!
+        const itemsWanted = data.objectIDs.slice(0, load); // There may be none!
         Promise.all(
           itemsWanted.map(async (id) => {
             const resp = await fetch(
@@ -65,7 +66,7 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-  }, [search, filter]);
+  }, [search, filter, load]);
 
   return (
     <div className="App">
@@ -86,6 +87,8 @@ function App() {
               setFilter={setFilter}
               reviews={reviews}
               setReviews={setReviews}
+              load={load}
+              setLoad={setLoad}
             />
           }
         />

@@ -1,14 +1,15 @@
 .favorite-section {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 5%;
-    row-gap: 5%;
-    place-items: center;
-    margin-top: 3rem;
+    width: 100vw;
+    padding: 5vh 5vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: whitesmoke;
 }
 
 h1 {
+    margin-top: 5rem;
     text-align: center;
 }
 

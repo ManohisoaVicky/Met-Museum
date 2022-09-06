@@ -1,11 +1,6 @@
 .result-card {
-    /* border: 1px solid grey; */
-    /* height: 55vh;
-    width: 20vw; */
     min-height: 400px;
-    /* max-height: 400px; */
     width: 250px;
-    /* border-radius: 10px; */
     box-shadow: 0 0 10px 3px lightgrey;
     position: relative;
     color: black;
@@ -19,8 +14,6 @@
 }
 
 .result-img {
-    /* border-top-right-radius: 7px;
-    border-top-left-radius: 7px; */
     height: 300px;
     width: 250px;
     object-fit: cover;
@@ -37,31 +30,40 @@
 
 }
 
-.fav {
+ .fav {
     position: absolute;
-    top: 2%;
-    right: 2%;
-    text-shadow: 0px 0px 10px white;
+        top: 2%;
+        right: 2%;
+        text-shadow: 0px 0px 10px white;
+    transition: all .3s ease-in-out;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
-.grow { 
-    transition: all .3s ease-in-out; 
-    }
-    
-    .grow:hover { 
-    transform: scale(1.1); 
-    }
-
-
-.material-symbols-outlined:hover {
+ .fav:hover {
     cursor: pointer;
     color: red;
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    transform: scale(1.1); 
+    transition: all .3s ease-in-out;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
+
+.fav.active {
+    color: red;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
 
 
 .card-description p, 

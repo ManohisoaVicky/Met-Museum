@@ -22,7 +22,7 @@ function Favorites(props) {
           (props.favorites.map((artwork, index) => {
             return (
               <ResultCard favorites={props.favorites} setFavorites={props.setFavorites} artKey={artwork.objectID} 
-              src={artwork.primaryImage} title={artwork.title} key={artwork.GalleryNumber} icon={"delete"} 
+              src={artwork.primaryImage} title={artwork.title} key={artwork.GalleryNumber} icon={"delete"} displayName={artwork.artistDisplayName}
               clickHandler={() => removeFavorite(index)} />
             )
           }))

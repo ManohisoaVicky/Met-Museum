@@ -1,15 +1,14 @@
 import React from 'react'
 import ContactInfo from '../components/ContactInfo'
-import ImageViewer from '../components/ImageViewer'
-import Map from '../components/Map'
+import TicketInformation from '../components/TicketInformation'
+import "../styles/About.css"
 
 function About() {
   return (
-    <div>
+    <div className='About'>
         <h1>About</h1>
-        {/* <ImageViewer /> */}
         <ContactInfo />
-        <Map />    
+        <TicketInformation />   
     </div>
   )
 }

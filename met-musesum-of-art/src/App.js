@@ -1,5 +1,4 @@
 import "./App.css";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import DetailedView from "./pages/DetailedView";
@@ -20,8 +19,6 @@ function App() {
   const [filter, setFilter] = useState([]);
   const [load, setLoad] = useState(21);
 
-  // useEffect(() => {}, [reviews]);
-
   useEffect(() => {
     // 10 favourite objects ...
     // fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects")
@@ -40,9 +37,11 @@ function App() {
 
     // Debouncing/Throttling
     console.log(filter);
-    const filterJoined = filter.join("|");
+    console.log(filter.join("|"));
     fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}&medium=${filterJoined}&hasImages=true`
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}&medium=${filter.join(
+        "|"
+      )}&hasImages=true`
     )
       .then((response) => {
         if (!response.ok) {
@@ -115,7 +114,6 @@ function App() {
           }
         />
       </Routes>
-      <Footer />
     </div>
   );
 }

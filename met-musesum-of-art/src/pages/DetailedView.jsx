@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import DetailedReviews from '../components/DetailedReviews'
 import ImageViewer from '../components/ImageViewer'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import "../styles/DetailedView.css"
 
@@ -26,6 +26,9 @@ function DetailedView(props) {
 
   return (
     <div className="DetailedView">
+      <Link to="/library">
+        <span class="material-symbols-outlined close">close</span>
+      </Link>
       {art ?
       <div className='top'>
         <div className='DetailedInfo'>

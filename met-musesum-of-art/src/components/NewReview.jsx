@@ -22,7 +22,6 @@ function NewReview(props) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    // props.setReviews((prevReviews) => prevReviews.push(review))
     props.setReviews([...props.reviews, {...review}])
   }
 
@@ -49,8 +48,8 @@ function NewReview(props) {
         <label className='NewReview-comment'>
           <textarea name='comment' value={review.comment} onChange={handleChange} placeholder='Enter your comments here.'/>
         </label>
-        <button>Post</button>
       </form>
+        <button>Post</button>
     </div>
   )
 }

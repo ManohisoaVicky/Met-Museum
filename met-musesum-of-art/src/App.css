@@ -15,3 +15,6 @@ h1, h2, h3 {
   font-family: 'Playfair';
   font-weight: 400;
 }
+.App {
+  height: 100vh;;
+}

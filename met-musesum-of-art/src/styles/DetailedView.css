@@ -24,3 +24,13 @@
     text-align: left;
     margin: 0;
 }
+
+.material-symbols-outlined.close {
+    color: black;
+    font-size: xx-large;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 600,
+        'GRAD' 0,
+        'opsz' 48
+}

@@ -6,15 +6,11 @@ function FilterButton({ name, filter, setFilter }) {
 
   function handleClick(e) {
     if (!active) {
-      setFilter((prevFilter) => (prevFilter.push(e.target.innerText)))
-      setActive((prevStatus) => (!prevStatus))
-      console.log(filter)
-      console.log(filter.join())
+      setFilter([...filter, e.target.innerText])
+      setActive(!active)
     } else {
-      setFilter((prevFilter) => (prevFilter.filter((filter) => filter !== e.target.innerText)))
-      setActive((prevStatus) => (!prevStatus))
-      console.log(filter)      
-      console.log(filter.join())
+      setFilter([...filter.filter((f) => {return f !== e.target.innerText})])
+      setActive(!active)
     }
   }
 

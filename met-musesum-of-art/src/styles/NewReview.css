@@ -14,7 +14,6 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-    /* text-align: center; */
     font-family: 'Playfair';
     font-weight: 600;
     color: grey;
@@ -46,30 +45,26 @@
     padding: 10px;
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 48
-}
-
-.star {
-    color: grey;
-}
-
-.star:hover {
-    color: midnightblue;
-    opacity: 0.7;
+.material-symbols-outlined.star {
+        color: white;
     font-variation-settings:
         'FILL' 1,
         'wght' 400,
         'GRAD' 0,
         'opsz' 48
-            
 }
 
-.fill {
+.material-symbols-outlined.star:hover {
+    color: midnightblue;
+    opacity: 0.5;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48       
+}
+
+.material-symbols-outlined.star.fill {
     color: midnightblue;
     font-variation-settings:
         'FILL' 1,

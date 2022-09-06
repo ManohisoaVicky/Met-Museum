@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import "../styles/ResultsList.css"
 import ResultCard from './ResultCard'
@@ -25,8 +25,9 @@ function ResultsList(props) {
         props.artwork.map((art) => {
           if (art.primaryImage !== "") {
             return (
-              <ResultCard staticData={props.staticData} favorites={props.favorites} setFavorites={props.setFavorites} reviews={props.reviews} setReviews={props.setReviews} artKey={art.objectID} src={art.primaryImage} title={art.title} displayName={art.artistDisplayName}
-              clickHandler={() => addFavorite(art)} key={art.objectID} icon={"favorite"}
+              <ResultCard staticData={props.staticData} favorites={props.favorites} setFavorites={props.setFavorites} reviews={props.reviews} setReviews={props.setReviews} 
+              artKey={art.objectID} src={art.primaryImage} title={art.title} displayName={art.artistDisplayName} clickHandler={() => addFavorite(art)} 
+               key={art.objectID} icon={"favorite"} className={(props.favorites.includes(art)? "favorite": "")}
               />
             )
           }

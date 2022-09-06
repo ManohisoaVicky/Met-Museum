@@ -16,6 +16,11 @@ function Review(props) {
             <div className='star'></div>
             <div className='star'></div>
             <div className='star'></div>
+            {/* {
+              [...Array(props.review.rating)].map(() => {
+                return (<span className="material-symbols-outlined star">star</span>)
+              })
+            } */}
           </div>
         </div>
         <div className='Review-comment'>

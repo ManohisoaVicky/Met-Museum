@@ -1,4 +1,7 @@
 .Header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -8,7 +11,9 @@
   margin: 0;
   background-color: aliceblue;
   color: midnightblue;
-  height: 10vh;
+  height: 40px;
+  max-height: 40px;
+  width: 100%;
   border-bottom: 5px solid midnightblue;
 }
 

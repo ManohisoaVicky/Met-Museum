@@ -4,16 +4,58 @@
     justify-content: center;
     align-items: center;
     height: 90vh;
+    background: url("https://www.metmuseum.org/-/media/images/homepage/locations/fifth-avenue/fifth_ave_mobile_darkened2_final.jpg?h=657&amp;iar=0&amp;mw=1200&amp;w=1200&amp;sc_lang=en&amp;hash=1FA1DB70144732C209F2F8526CC2E9BF");
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-cover {
+    background: rgba(192,192,192,0.65);
+    padding: 15px 25px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .Home h1 {
     margin: 0;
+    color: midnightblue;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px whitesmoke;
 }
 
 .Home h2 {
     margin: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: charcoal;
 }
 
 .Home button {
+    box-sizing: content-box;
+    /* border-radius: 50vmax; */
+    border: 1px solid whitesmoke;
+    outline: white;
+    padding: 7px 25px;
+    background-color: midnightblue;
+    color: aliceblue;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: inherit;
+    font-weight: 300;
+}
 
+.Home button:hover {
+    background-color: aliceblue;
+    color: midnightblue;
+    border: 1px solid midnightblue;
+    transition: 0.5s;
+    /* transform: scale(1.05); */
+}
+
+.Home button:active {
+    transform: translate(0, 100vh);
+    transition: 0.5s ease;
 }

@@ -5,11 +5,13 @@ import "../styles/Home.css"
 function Home() {
   return (
     <div className='Home'>
-      <h1>Title</h1>
+      <div className='hero-cover'>
+      <h1>Metropolitan Museum of Art</h1>
       <h2>Subtitle</h2>
       <Link to="/library">
-        <button>Got to Library</button>
+        <button>Explore Library</button>
       </Link>
+      </div>
     </div>
   )
 }

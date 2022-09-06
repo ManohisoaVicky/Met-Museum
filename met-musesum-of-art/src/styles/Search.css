@@ -4,6 +4,7 @@
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
+    padding: 15px 0 10px 0;
 
     width: 100%;
 }

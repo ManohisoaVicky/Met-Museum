@@ -9,6 +9,7 @@ function Library(props) {
   return (
     <div className="Library">
       <h1>Library</h1>
+      <p>Explore the works of Art . . .</p>
       <Search search={props.search} setSearch={props.setSearch} filter={props.filter} setFilter={props.setFilter}/>
       <ResultsList artwork={props.artwork} favorites={props.favorites} setFavorites={props.setFavorites} reviews={props.reviews} setReviews={props.setReviews}/>
     </div>

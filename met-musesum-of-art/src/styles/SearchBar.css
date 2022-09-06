@@ -5,10 +5,10 @@
     height: 40px;
     width: 200px;
     padding: 5px 15px;
-    margin: 5px;
+    margin: 5px 10px 5px 5px;
 
     border-radius: 50vmax;
-    border: 2px solid #162950;
+    border: 2px solid black;
 
     outline: none;
 
@@ -16,7 +16,7 @@
     font-family: 'Helvetica';
     font-size: medium;
     font-weight: 200;
-    color: #162950;
+    color: darkgray;
 
     background-color: white;
     /* background-image: url(""); */

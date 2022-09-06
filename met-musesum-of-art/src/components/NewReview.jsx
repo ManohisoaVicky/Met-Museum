@@ -5,6 +5,7 @@ function NewReview(props) {
 
   const stars = [1, 2, 3, 4, 5];
   const [review, setReview] = useState({
+    objectID: props.objectID,
     user: "",
     rating: 1,
     comment: ""
@@ -21,8 +22,8 @@ function NewReview(props) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    props.setReviews((prevReviews) => prevReviews.push(review))
-    console.log("Need to pass down a setter... it will add this review", review, props.reviews)
+    // props.setReviews((prevReviews) => prevReviews.push(review))
+    props.setReviews([...props.reviews, {...review}])
   }
 
   return (
@@ -39,7 +40,6 @@ function NewReview(props) {
             {stars.map((num) => {
               if (num <= review.rating) {
                 return (<span class="material-symbols-outlined star fill" key={num} id={num} onClick={handleStarClick}>star</span>)
-                // return (<div className='star fill' key={num} id={num} onClick={handleStarClick}></div>)
               } else {
                 return (<span class="material-symbols-outlined star" key={num} id={num} onClick={handleStarClick}>star</span>)
               }

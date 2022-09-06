@@ -1,12 +1,12 @@
 import React from 'react'
 import "../styles/Review.css"
 
-function Review() {
+function Review(props) {
   return (
     <div className='Review'>
       <div className='Review-user'>
         <div className='Review-user-icon'></div>
-        <span>Manohisoa</span>
+        <span>{props.review.user}</span>
       </div>
       <div className='Review-content'>
         <div className='Review-star-rating'>
@@ -20,7 +20,7 @@ function Review() {
         </div>
         <div className='Review-comment'>
           <span className='Review-comment-quotemark'>"</span>
-          <span>The review comment should be here</span>
+          <span>{props.review.comment}</span>
           <span className='Review-comment-quotemark'>"</span>
         </div>  
       </div>

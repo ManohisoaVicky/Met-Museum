@@ -20,6 +20,8 @@ function App() {
   const [filter, setFilter] = useState([]);
   const [load, setLoad] = useState(21);
 
+  // useEffect(() => {}, [reviews]);
+
   useEffect(() => {
     // 10 favourite objects ...
     // fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects")

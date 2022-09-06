@@ -14,7 +14,6 @@ function Header() {
                 <CustomLink to="/about">About</CustomLink>
                 <CustomLink to="/library">Library</CustomLink>
                 <CustomLink to="/favorites">Favorites</CustomLink>
-                <CustomLink to="/detailed">Detailed</CustomLink>
             </ul>
         </nav>
     </header>

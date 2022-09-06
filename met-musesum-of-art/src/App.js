@@ -17,7 +17,7 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState([]);
 
   useEffect(() => {
     // 10 favourite objects ...
@@ -36,8 +36,10 @@ function App() {
     //   });
 
     // Debouncing/Throttling
+    console.log(filter);
+    const filterJoined = filter.join("|");
     fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}&medium=${filter}&hasImages=true`
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}&medium=${filterJoined}&hasImages=true`
     )
       .then((response) => {
         if (!response.ok) {

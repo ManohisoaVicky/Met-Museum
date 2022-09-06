@@ -7,7 +7,7 @@ function SearchBar(props) {
   return (
     <>
       <input onChange={(event) => props.setSearch(event.target.value)} className='SearchBar' type="text" placeholder='Search'/>
-      <span onclick={() => {}} className="material-symbols-outlined">search</span>
+      <span onClick={() => {}} className="material-symbols-outlined">search</span>
     </>
   )
 }

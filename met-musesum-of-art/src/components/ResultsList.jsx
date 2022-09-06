@@ -26,7 +26,7 @@ function ResultsList(props) {
             )
           }
         }) :
-      <>Failed</>}
+      <>Creating Artwork 🎨</>}
     </section>
   )
 }

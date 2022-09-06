@@ -5,7 +5,7 @@ import "../styles/ImageViewer.css"
 function ImageViewer( { art } ) {
 
   const [primaryImage, setPrimaryImage] = useState(art.primaryImage)
-  const [additionalImages, setAdditionalImages] = useState([art.primaryImage, ...art.additionalImages])
+  const [additionalImages] = useState([art.primaryImage, ...art.additionalImages])
 
   function handleNewSelection (e) {
     setPrimaryImage(e.target.src)
@@ -14,15 +14,14 @@ function ImageViewer( { art } ) {
   return (
     <div className="ImageViewer">
       <div className="ImageViewer-main-image-container">
-      {/* <div onMouseOver={handleImageDrag} onMouseOut={() => {setImageMargin({x: 0, y: 0})}} className="ImageViewer-main-image-container"> */}
         <img  src={primaryImage} alt=""/>
         </div>
       <div className="ImageViewer-additional-image-container">
-        {additionalImages.map((url) => {
+        {additionalImages.map((url, index) => {
           if (primaryImage === url) {
-            return (<img className='selected' src={url} alt="" onClick={handleNewSelection}/>)
+            return (<img className='selected' src={url} alt="" onClick={handleNewSelection} key={index}/>)
           } else {
-            return (<img src={url} alt="" onClick={handleNewSelection}/>)
+            return (<img src={url} alt="" onClick={handleNewSelection} key={index}/>)
           }
         })}
       </div>

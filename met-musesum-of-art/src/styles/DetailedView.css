@@ -3,17 +3,24 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: space-between;
-    margin: 5vh 5vw;
+    margin: 5vw 5vw;
+    max-width: 90vw;
 }
 
-.DetailedView .top {
+/* .DetailedView .top {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-}
+} */
 
 .DetailedInfo {
     text-align: left;
-    margin-left: 35px;
+    
+}
+
+.DetailedInfo h1 {
+    font-weight: 500;
+    text-align: left;
+    margin: 0;
 }

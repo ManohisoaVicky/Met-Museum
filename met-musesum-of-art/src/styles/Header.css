@@ -6,9 +6,10 @@
 
   padding: 0 1rem;
   margin: 0;
-  background-color: silver;
-  color: aliceblue;
+  background-color: aliceblue;
+  color: midnightblue;
   height: 10vh;
+  border-bottom: 5px solid midnightblue;
 }
 
 nav ul {
@@ -40,19 +41,29 @@ nav li {
   min-width: 5vw;
 }
 
+.logo-link {
+  font-family: 'Playfair';
+  font-size: large;
+}
+
 .nav-link {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 200;
+  transition: 0.5s;
 }
 
 nav li.active{
-  background-color: #d3d3d3;
+  background-color: midnightblue;
+  color: aliceblue;
 } 
 
 nav li:hover {
-  background-color: #dcdcdc;
+  background-color: midnightblue;
+  color: aliceblue;
+  transition: 0.5s;
 }
 
 

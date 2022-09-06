@@ -39,6 +39,9 @@ nav a {
 
 nav li {
   min-width: 5vw;
+  background-color: aliceblue;
+  color: midnightblue;
+  transition: 0.5s;
 }
 
 .logo-link {
@@ -52,7 +55,6 @@ nav li {
   justify-content: center;
   align-items: center;
   font-weight: 200;
-  transition: 0.5s;
 }
 
 nav li.active{
@@ -61,7 +63,7 @@ nav li.active{
 } 
 
 nav li:hover {
-  background-color: midnightblue;
+  background-color: rgba(25, 25, 112, 0.75);;
   color: aliceblue;
   transition: 0.5s;
 }

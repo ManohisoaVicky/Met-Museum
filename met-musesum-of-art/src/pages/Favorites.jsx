@@ -13,8 +13,9 @@ function Favorites(props) {
   }
 
   return (
-    <div className=".favorites">
+    <div className="Favorites">
       <h1>Favorites</h1>
+      <p>All of your favorite artwork, in one place.</p>
       <section className="favorite-section">
         {
           (props.favorites.length === 0) ? 

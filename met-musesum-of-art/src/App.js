@@ -122,10 +122,10 @@ function App() {
             }
           />
         </Routes>
+        <footer>
+          <Footer />
+        </footer>
       </div>
-      <footer>
-        <Footer />
-      </footer>
     </>
   );
 }

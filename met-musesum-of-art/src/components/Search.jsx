@@ -21,7 +21,7 @@ function Search(props) {
         {active && 
             (<>
                 {options.map((option, index) => {
-                  return <FilterButton key={index} name={option} filter={props.filter} setFilter={props.setFilter} setArtwork={props.setArtwork}/>
+                  return <FilterButton key={index} name={option} filter={props.filter} setFilter={props.setFilter} setArtwork={props.setArtwork} load={props.load} setLoad={props.setLoad}/>
                   })
                 }          
             </>)

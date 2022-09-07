@@ -2,8 +2,11 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin: 40px 5vw 5vh 5vw;
+
+    min-height: 100vh;
+    position: relative;
 }
 
 .About h1 {
@@ -13,7 +16,98 @@
     text-decoration: underline;
 }
 
-.About p {
-    margin: 0px 0 15px 0;
-    font-weight: 200;
+.ContactInfo {
+    box-sizing: border-box;
+
+    width: 60vw;
+    padding: 5vh 5vw;
+    margin: 20px 0px;
+
+    text-align: right;
+    background: whitesmoke;
+}
+
+.ContactInfo h2 {
+    text-align: left;
+    color: midnightblue;
+    margin: 0;
+}
+
+.ContactInfo hr {
+    background: midnightblue;
+    border: none;
+    height: 0.5px;
+}
+
+.ContactInfo a {
+    text-decoration: none;
+    color: inherit;
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+
+.ContactInfo p {
+    width: 100%;
+    padding: 0px 5px;
+    margin: 0;
+    font-size: small;
+}
+
+.ContactInfo span {
+    float: left;
+    font-size: small;
+    font-weight: 500;
+}
+
+.TicketInformation {}
+
+.TicketInformation h2 {}
+
+.TicketInformation h3 {}
+
+.TicketInformation p {
+    font-size: small;
+    font-weight: 300;
+
+}
+
+.TicketInformation span {
+    font-size: small;
+    font-weight: 500;
+}
+
+
+
+.TicketInformation .opening-hours {
+    box-sizing: border-box;
+
+    width: 60vw;
+    padding: 5vh 5vw;
+    margin: 20px 0px;
+
+    text-align: right;
+    background: whitesmoke;
+}
+
+.TicketInformation .opening-hours h2 {
+    text-align: left;
+    color: midnightblue;
+    margin: 0;
+}
+
+.TicketInformation .opening-hours hr {
+    background: midnightblue;
+    border: none;
+    height: 0.5px;
+}
+
+.TicketInformation .opening-hours p {
+    width: 100%;
+    padding: 0px 5px;
+    margin: 0;
+}
+
+.TicketInformation .opening-hours span {
+    float: left;
 }

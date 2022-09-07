@@ -16,12 +16,12 @@ function Search(props) {
 
   return (
     <div className='Search'>
-        <SearchBar search={props.search} setSearch={props.setSearch} />
+        <SearchBar search={props.search} setSearch={props.setSearch} load={props.load} setLoad={props.setLoad} setArtwork={props.setArtwork}/>
         <FilterBurger status={active} changeStatus={changeStatus} filter={props.filter} setFilter={props.setFilter}/>
         {active && 
             (<>
                 {options.map((option, index) => {
-                  return <FilterButton key={index} name={option} filter={props.filter} setFilter={props.setFilter}/>
+                  return <FilterButton key={index} name={option} filter={props.filter} setFilter={props.setFilter} setArtwork={props.setArtwork}/>
                   })
                 }          
             </>)

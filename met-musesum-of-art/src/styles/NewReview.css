@@ -1,12 +1,21 @@
 .NewReview {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 10px;
-
-    border: 1px solid silver;
+    
+    border: 1px solid grey;
     background: lightgray;
+}
+
+.NewReview-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    
+    width: 100%;
+    padding: 10px;
 }
 
 .NewReview-user {
@@ -14,6 +23,7 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
+
     font-family: 'Playfair';
     font-weight: 600;
     color: grey;
@@ -21,6 +31,8 @@
 
 .NewReview-user input {
     width: 100px;
+    border: 1px solid grey;
+    text-align: center;
 }
 
 .NewReview-user-icon {
@@ -28,7 +40,7 @@
     width: 50px;
     margin: 5px;
     background: whitesmoke;
-    border: 1px solid silver;
+    border: 1px solid grey;
     border-radius: 50vmax;
 }
 
@@ -41,6 +53,7 @@
     box-sizing: border-box;
     width: 100%;
     border: none;
+    border: 1px solid grey;
     outline: none;
     padding: 10px;
 }
@@ -73,3 +86,16 @@
         'opsz' 48
 }
 
+.NewReview button {
+    width: 100%;
+    border: none;
+    border-top: 1px solid grey;
+    outline: none;
+
+    padding: 5px;
+}
+
+.NewReview button:hover {
+    background: grey;
+    color: whitesmoke;
+}

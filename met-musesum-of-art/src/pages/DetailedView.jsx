@@ -33,13 +33,13 @@ function DetailedView(props) {
       <div className='top'>
         <div className='DetailedInfo'>
           <h1>{art.title}</h1>
-          <h2>{art.artist}</h2>
+          <h2>{art.artistDisplayName}</h2>
           <h3>{art.culture}</h3>
           <p>{art.objectDate}</p>
         </div>
         <ImageViewer art={art} />
       </div>
-    : <div>Not Loaded</div>}
+    : <div>Loading . . .</div>}
       <DetailedReviews reviews={props.reviews} setReviews={props.setReviews} art={art}/>
     </div> 
 

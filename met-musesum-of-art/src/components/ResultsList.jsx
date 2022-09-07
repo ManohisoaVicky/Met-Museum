@@ -14,15 +14,14 @@ function ResultsList(props) {
 
   function loadMore() {
     props.setLoad((prev) => prev + 10)
+    console.log("this is the artwork", props.artwork)
   }
-
-  console.log("props.artwork", props.artwork)
 
   return (
     <>
     <section className="results-section">
       { props.artwork ?
-        props.artwork.map((art) => {
+        props.artwork.slice(0,props.load).map((art) => {
           if (art.primaryImage !== "") {
             return (
               <ResultCard staticData={props.staticData} favorites={props.favorites} setFavorites={props.setFavorites} reviews={props.reviews} setReviews={props.setReviews} 

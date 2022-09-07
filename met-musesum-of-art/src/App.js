@@ -12,13 +12,13 @@ import data from "./data.js";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [artwork, setArtwork] = useState(null);
+  const [artwork, setArtwork] = useState([]);
   const [staticData, setStaticData] = useState(data);
   const [favorites, setFavorites] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState([]);
-  const [load, setLoad] = useState(21);
+  const [load, setLoad] = useState(10);
 
   useEffect(() => {
     // 10 favourite objects ...
@@ -39,8 +39,13 @@ function App() {
     // Debouncing/Throttling
     console.log(filter);
     console.log(filter.join("|"));
+    console.log(
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?medium=${filter.join(
+        "|"
+      )}&hasImages=true&q=${search}`
+    );
     fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}&medium=${filter.join(
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?&q=${search}&medium=${filter.join(
         "|"
       )}&hasImages=true`
     )
@@ -51,7 +56,7 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        const itemsWanted = data.objectIDs.slice(0, load); // There may be none!
+        const itemsWanted = data.objectIDs.slice(load - 10, load - 1); // There may be none!
         Promise.all(
           itemsWanted.map(async (id) => {
             const resp = await fetch(
@@ -62,7 +67,7 @@ function App() {
             return item;
           })
         ).then((data) => {
-          setArtwork(data);
+          setArtwork([...artwork, ...data]);
         });
       })
       .catch((error) => {
@@ -82,6 +87,7 @@ function App() {
             element={
               <Library
                 artwork={artwork}
+                setArtwork={setArtwork}
                 favorites={favorites}
                 setFavorites={setFavorites}
                 search={search}

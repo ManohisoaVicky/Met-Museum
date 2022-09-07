@@ -7,7 +7,7 @@ function Home() {
     <div className='Home'>
       <div className='hero-cover'>
       <h1>Metropolitan Museum of Art</h1>
-      <h2>Subtitle</h2>
+      <h2>Homepage</h2>
       <Link to="/library">
         <button>Explore Library</button>
       </Link>

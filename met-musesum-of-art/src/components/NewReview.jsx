@@ -26,15 +26,13 @@ function NewReview(props) {
   }
 
   return (
-    <div className='NewReview'>
-      <div className='NewReview-user'>
-        <div className='NewReview-user-icon'></div>
-        <label>
-          <input name='user' value={review.user} onChange={handleChange} />
-        </label>
-      </div>
-      <form className='NewReview-content'onSubmit={handleSubmit}>
-        <label className='NewReview-star-rating'>      
+    <form className='NewReview' onSubmit={handleSubmit}>
+      <div className='NewReview-container' >
+        <div className='NewReview-user'>
+          <div className='NewReview-user-icon'></div>
+          <label><input name='user' value={review.user} onChange={handleChange} /></label>
+        </div>
+        <div className='NewReview-content'>
           <div className='star-container'>
             {stars.map((num) => {
               if (num <= review.rating) {
@@ -44,13 +42,13 @@ function NewReview(props) {
               }
             })}
           </div>
-        </label>
-        <label className='NewReview-comment'>
-          <textarea name='comment' value={review.comment} onChange={handleChange} placeholder='Enter your comments here.'/>
-        </label>
-        <button>Post</button>
-      </form>
-    </div>
+          <label className='NewReview-comment'>
+            <textarea name='comment' value={review.comment} onChange={handleChange} placeholder='Enter your comments here.'/>
+          </label>                   
+        </div>
+      </div>
+      <button>Submit Review</button>
+    </form>
   )
 }
 

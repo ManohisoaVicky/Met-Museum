@@ -1,3 +1,19 @@
 .About {
-    /* margin: 45px 5vw; */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 5vw 5vh 5vw;
+}
+
+.About h1 {
+    margin: 20px 0 10px 0;
+    font-weight: 700;
+    color: midnightblue;
+    text-decoration: underline;
+}
+
+.About p {
+    margin: 0px 0 15px 0;
+    font-weight: 200;
 }

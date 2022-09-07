@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Library from "./pages/Library";
+import Footer from "./components/Footer";
 import data from "./data.js";
 
 import { useState, useEffect } from "react";
@@ -70,51 +71,56 @@ function App() {
   }, [search, filter, load]);
 
   return (
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route
-          path="/library"
-          element={
-            <Library
-              artwork={artwork}
-              favorites={favorites}
-              setFavorites={setFavorites}
-              search={search}
-              setSearch={setSearch}
-              filter={filter}
-              setFilter={setFilter}
-              reviews={reviews}
-              setReviews={setReviews}
-              load={load}
-              setLoad={setLoad}
-            />
-          }
-        />
-        <Route
-          path="/favorites"
-          element={
-            <Favorites
-              staticData={staticData}
-              favorites={favorites}
-              setFavorites={setFavorites}
-            />
-          }
-        />
-        <Route
-          path="/detailed/:id"
-          element={
-            <DetailedView
-              reviews={reviews}
-              setReviews={setReviews}
-              art={artwork}
-            />
-          }
-        />
-      </Routes>
-    </div>
+    <>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/library"
+            element={
+              <Library
+                artwork={artwork}
+                favorites={favorites}
+                setFavorites={setFavorites}
+                search={search}
+                setSearch={setSearch}
+                filter={filter}
+                setFilter={setFilter}
+                reviews={reviews}
+                setReviews={setReviews}
+                load={load}
+                setLoad={setLoad}
+              />
+            }
+          />
+          <Route
+            path="/favorites"
+            element={
+              <Favorites
+                staticData={staticData}
+                favorites={favorites}
+                setFavorites={setFavorites}
+              />
+            }
+          />
+          <Route
+            path="/detailed/:id"
+            element={
+              <DetailedView
+                reviews={reviews}
+                setReviews={setReviews}
+                art={artwork}
+              />
+            }
+          />
+        </Routes>
+      </div>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 }
 

@@ -48,8 +48,8 @@ function NewReview(props) {
         <label className='NewReview-comment'>
           <textarea name='comment' value={review.comment} onChange={handleChange} placeholder='Enter your comments here.'/>
         </label>
-      </form>
         <button>Post</button>
+      </form>
     </div>
   )
 }

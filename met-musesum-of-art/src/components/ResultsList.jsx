@@ -29,7 +29,7 @@ function ResultsList(props) {
               />
             )
           } else {
-            return null
+            return <></>
           }
         }) :
       <>Creating Artwork 🎨</>}

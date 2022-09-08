@@ -14,7 +14,6 @@ function ResultsList(props) {
 
   function loadMore() {
     props.setLoad((prev) => prev + 10)
-    console.log("this is the artwork", props.artwork)
   }
 
   return (

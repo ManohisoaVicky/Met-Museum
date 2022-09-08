@@ -21,29 +21,6 @@ function App() {
   const [load, setLoad] = useState(10);
 
   useEffect(() => {
-    // 10 favourite objects ...
-    // fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects")
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       throw new Error(response.status);
-    //     }
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-
-    // Debouncing/Throttling
-    console.log(filter);
-    console.log(filter.join("|"));
-    console.log(
-      `https://collectionapi.metmuseum.org/public/collection/v1/search?medium=${filter.join(
-        "|"
-      )}&hasImages=true&q=${search}`
-    );
     fetch(
       `https://collectionapi.metmuseum.org/public/collection/v1/search?&q=${search}&medium=${filter.join(
         "|"

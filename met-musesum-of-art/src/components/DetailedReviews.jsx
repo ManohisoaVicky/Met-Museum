@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React from 'react'
 import "../styles/DetailedReviews.css"
 import NewReview from "../components/NewReview"
 import Review from "../components/Review"

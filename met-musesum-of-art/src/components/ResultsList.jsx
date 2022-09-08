@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import "../styles/ResultsList.css"
 import ResultCard from './ResultCard'
@@ -28,6 +28,8 @@ function ResultsList(props) {
                key={art.objectID} icon={"favorite"} className={(props.favorites.includes(art)? "favorite": "")}
               />
             )
+          } else {
+            return null
           }
         }) :
       <>Creating Artwork 🎨</>}

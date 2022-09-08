@@ -7,13 +7,11 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Library from "./pages/Library";
 import Footer from "./components/Footer";
-import data from "./data.js";
 
 import { useState, useEffect } from "react";
 
 function App() {
   const [artwork, setArtwork] = useState([]);
-  const [staticData, setStaticData] = useState(data);
   const [favorites, setFavorites] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [search, setSearch] = useState("");
@@ -50,7 +48,7 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-  }, [search, filter, load]);
+  }, [artwork, search, filter, load]);
 
   return (
     <>
@@ -81,11 +79,7 @@ function App() {
           <Route
             path="/favorites"
             element={
-              <Favorites
-                staticData={staticData}
-                favorites={favorites}
-                setFavorites={setFavorites}
-              />
+              <Favorites favorites={favorites} setFavorites={setFavorites} />
             }
           />
           <Route

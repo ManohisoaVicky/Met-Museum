@@ -20,18 +20,17 @@ function App() {
 
   useEffect(() => {
     // Old Fetch Request
-    // fetch(
-    //   `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}medium=${filter.join(
-    //     "|"
-    //   )}&hasImages=true`
-    // );
-
-    // New Fetch Request
     fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/search?medium=${filter.join(
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}medium=${filter.join(
         "|"
-      )}&hasImages=true&q=${search || "*"}`
+      )}&hasImages=true`
     )
+      // New Fetch Request
+      // fetch(
+      //   `https://collectionapi.metmuseum.org/public/collection/v1/search?medium=${filter.join(
+      //     "|"
+      //   )}&hasImages=true&q=${search || "*"}`
+      // )
       .then((response) => {
         if (!response.ok) {
           throw new Error(response.status);

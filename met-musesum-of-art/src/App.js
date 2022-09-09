@@ -19,10 +19,18 @@ function App() {
   const [load, setLoad] = useState(10);
 
   useEffect(() => {
+    // Old Fetch Request
+    // fetch(
+    //   `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}medium=${filter.join(
+    //     "|"
+    //   )}&hasImages=true`
+    // );
+
+    // New Fetch Request
     fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/search?&q=${search}&medium=${filter.join(
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?medium=${filter.join(
         "|"
-      )}&hasImages=true`
+      )}&hasImages=true&q=${search || "*"}`
     )
       .then((response) => {
         if (!response.ok) {
@@ -32,12 +40,12 @@ function App() {
       })
       .then((data) => {
         const itemsWanted = data.objectIDs.slice(load - 10, load - 1); // There may be none!
+        console.log(itemsWanted);
         Promise.all(
           itemsWanted.map(async (id) => {
             const resp = await fetch(
               `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
             );
-
             const item = await resp.json();
             return item;
           })
@@ -48,7 +56,8 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-  }, [artwork, search, filter, load]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search, filter, load]);
 
   return (
     <>

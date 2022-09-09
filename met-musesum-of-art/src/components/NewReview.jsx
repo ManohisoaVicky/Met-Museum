@@ -13,7 +13,6 @@ function NewReview(props) {
   
   function handleStarClick (e) {
     setReview({...review, rating: parseInt(e.target.id) })
-    console.log(review)
   }
 
   function handleChange (e) {
@@ -26,7 +25,7 @@ function NewReview(props) {
   }
 
   return (
-    <form className='NewReview' onSubmit={handleSubmit}>
+    <form className='NewReview' onSubmit={handleSubmit} key={props.objectID}>
       <div className='NewReview-container' >
         <div className='NewReview-user'>
           <div className='NewReview-user-icon'></div>
@@ -36,9 +35,9 @@ function NewReview(props) {
           <div className='star-container'>
             {stars.map((num) => {
               if (num <= review.rating) {
-                return (<span class="material-symbols-outlined star fill" key={num} id={num} onClick={handleStarClick}>star</span>)
+                return (<span className="material-symbols-outlined star fill" key={num} id={num} onClick={handleStarClick}>star</span>)
               } else {
-                return (<span class="material-symbols-outlined star" key={num} id={num} onClick={handleStarClick}>star</span>)
+                return (<span className="material-symbols-outlined star" key={num} id={num} onClick={handleStarClick}>star</span>)
               }
             })}
           </div>

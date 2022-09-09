@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import "../styles/ResultsList.css"
 import ResultCard from './ResultCard'
@@ -14,7 +14,6 @@ function ResultsList(props) {
 
   function loadMore() {
     props.setLoad((prev) => prev + 10)
-    console.log("this is the artwork", props.artwork)
   }
 
   return (
@@ -29,6 +28,8 @@ function ResultsList(props) {
                key={art.objectID} icon={"favorite"} className={(props.favorites.includes(art)? "favorite": "")}
               />
             )
+          } else {
+            return null
           }
         }) :
       <>Creating Artwork 🎨</>}

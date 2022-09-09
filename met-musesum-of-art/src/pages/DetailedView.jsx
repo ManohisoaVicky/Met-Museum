@@ -18,16 +18,15 @@ function DetailedView(props) {
                 }
                 return response.json()})
             .then((json) => {
-                console.log(json)
                 setArt(() => (json))
             })
             .catch((error) => (console.error))
     }, [ id ])
 
   return (
-    <div className="DetailedView">
+    <div className="DetailedView" key={props.objectID}>
       <Link to="/library">
-        <span class="material-symbols-outlined close">close</span>
+        <span className="material-symbols-outlined close">close</span>
       </Link>
       {art ?
       <div className='top'>

@@ -8,8 +8,6 @@ function Favorites(props) {
   function removeFavorite(index) {
     const newFavList = [...props.favorites.slice(0, index), ...props.favorites.slice(index + 1)]
     props.setFavorites(newFavList)
-    console.log(props.favorites)
-    console.log(newFavList)
   }
 
   return (

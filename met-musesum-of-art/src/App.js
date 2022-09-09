@@ -21,33 +21,18 @@ function App() {
   const [load, setLoad] = useState(10);
 
   useEffect(() => {
-    // 10 favourite objects ...
-    // fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects")
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       throw new Error(response.status);
-    //     }
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    // Old Fetch Request
+    // fetch(
+    //   `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}medium=${filter.join(
+    //     "|"
+    //   )}&hasImages=true`
+    // );
 
-    // Debouncing/Throttling
-    console.log(filter);
-    console.log(filter.join("|"));
-    console.log(
+    // New Fetch Request
+    fetch(
       `https://collectionapi.metmuseum.org/public/collection/v1/search?medium=${filter.join(
         "|"
-      )}&hasImages=true&q=${search}`
-    );
-    fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/search?&q=${search}&medium=${filter.join(
-        "|"
-      )}&hasImages=true`
+      )}&hasImages=true&q=${search || "*"}`
     )
       .then((response) => {
         if (!response.ok) {
@@ -57,12 +42,12 @@ function App() {
       })
       .then((data) => {
         const itemsWanted = data.objectIDs.slice(load - 10, load - 1); // There may be none!
+        console.log(itemsWanted);
         Promise.all(
           itemsWanted.map(async (id) => {
             const resp = await fetch(
               `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
             );
-
             const item = await resp.json();
             return item;
           })
@@ -73,6 +58,7 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search, filter, load]);
 
   return (
